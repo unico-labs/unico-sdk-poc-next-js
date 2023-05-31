@@ -9,6 +9,6 @@
     "next": "12.3.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "unico-webframe": "^3.6.4"
+    "unico-webframe": "3.8.2"
   }
 }
