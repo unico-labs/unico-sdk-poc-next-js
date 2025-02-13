@@ -9,12 +9,13 @@ const Home = () => {
 
   const unicoThemeRef = useRef();
   const unicoBuilderRef = useRef();
+  const unicoConfigRef = useRef();
 
   const selfieTypeRef = useRef();
   const documentTypeRef = useRef();
 
   function resetComponentStates() {
-    setPreparedCamera({});
+    //setPreparedCamera({});
     setShowBoxCamera(false);
     setLoading(false);
   }
@@ -105,6 +106,12 @@ const Home = () => {
     (async () => {
       const SDK = await import('unico-webframe');
 
+      unicoConfigRef.current = new SDK.UnicoConfig()
+
+      .setHostname("your hostname")
+  
+      .setHostKey("your sdkkey");
+
       unicoThemeRef.current = new SDK.UnicoThemeBuilder()
         .setColorSilhouetteSuccess("#d98888")
         .setColorSilhouetteError("#D50000")
@@ -124,6 +131,7 @@ const Home = () => {
         .setTheme(unicoThemeRef.current)
         .setModelsPath('http://localhost:3000/models')
         .setResourceDirectory("/resources")
+        .setEnvironment(SDK.SDKEnvironmentTypes.UAT)
         .build();
 
       selfieTypeRef.current = SDK.SelfieCameraTypes;
@@ -149,7 +157,7 @@ const Home = () => {
               type="button"
               onClick={() => {
                 prepareSelfieCamera(
-                  '/services.json',
+                  unicoConfigRef.current,
                   selfieTypeRef.current.NORMAL,
                   'Facetec Liveness',
                   false
@@ -163,7 +171,7 @@ const Home = () => {
               type="button"
               onClick={() => {
                 prepareSelfieCamera(
-                  '/services-sem-facetec.json',
+                  unicoConfigRef.current,
                   selfieTypeRef.current.SMART,
                   'Unico Smart',
                   true
@@ -177,7 +185,7 @@ const Home = () => {
               type="button"
               onClick={() => {
                 prepareSelfieCamera(
-                  '/services-sem-facetec.json',
+                  unicoConfigRef.current,
                   selfieTypeRef.current.NORMAL,
                   'Unico Normal',
                   true
@@ -191,7 +199,7 @@ const Home = () => {
               type="button"
               onClick={() => {
                 prepareDocumentCamera(
-                  '/services-sem-facetec.json',
+                  unicoConfigRef.current,
                   documentTypeRef.current.RG_FRENTE,
                   'RG Frente',
                   true
@@ -205,7 +213,7 @@ const Home = () => {
               type="button"
               onClick={() => {
                 prepareDocumentCamera(
-                  '/services-sem-facetec.json',
+                  unicoConfigRef.current,
                   documentTypeRef.current.RG_VERSO,
                   'RG Verso',
                   true
