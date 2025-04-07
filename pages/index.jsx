@@ -108,9 +108,9 @@ const Home = () => {
 
       unicoConfigRef.current = new SDK.UnicoConfig()
 
-      .setHostname("your hostname")
+      .setHostname("<YOUR_HOSTNAME>")
   
-      .setHostKey("your sdkkey");
+      .setHostKey("YOUR_SDKKEY>");
 
       unicoThemeRef.current = new SDK.UnicoThemeBuilder()
         .setColorSilhouetteSuccess("#d98888")
