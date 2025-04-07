@@ -176,14 +176,19 @@ Para iniciar a câmera com as configurações realizadas, siga os passos abaixo:
    Exemplo utilizando a classe `UnicoConfig`:
 
    ```javascript
-   import { UnicoConfig } from "unico-webframe"
+   const config = new UnicoConfig()
+     .setHostname("<YOUR_HOSTNAME>")
+     .setHostKey("<YOUR_HOST_KEY>");
 
-    const config = new UnicoConfig()
-    .setProjectNumber("<YOUR_PROJECT_NUMBER>")
-    .setProjectId("<YOUR_PROJECT_ID>")
-    .setMobileSdkAppId("<YOUR_MOBILE_SDK_APP_ID>")
-    .setHostname("<YOUR_HOSTNAME>")
-    .setHostInfo("<YOUR_HOST_INFO>")
+   unicoCamera.prepareSelfieCamera(
+     config, 
+     SelfieCameraTypes.SMART
+   ).then(cameraOpener => {
+     cameraOpener.open(callback);
+   }).catch(error => {
+     console.error(error);
+     // confira na aba "Referências" sobre os erros possíveis
+   });
    ```
 
 ---
