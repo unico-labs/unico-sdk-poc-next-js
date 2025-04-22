@@ -18,9 +18,10 @@
 
 ### 📌 Versões Mínimas
 
-O componente de captura do SDK Web é compatível com as seguintes versões mínimas:
+O componente de captura do SDK Web está utilizando as seguintes versões:
 
-- **Next:** 11;
+- **Next:** ^15.3.1;
+- **React:** ^19.1.0;
 
 ### 📱 Dispositivos Compatíveis
 
