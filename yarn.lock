@@ -303,19 +303,19 @@ tslib@^2.4.1, tslib@^2.8.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
 
-unico-webframe@3.20.0:
-  version "3.20.0"
-  resolved "https://registry.npmjs.org/unico-webframe/-/unico-webframe-3.20.0.tgz"
-  integrity sha512-zNDxBo9lhmuWNG6mEoKbv7Ziy9xFqMzKpBoKbOdDwxGZw7kXXFChjD1+4E3HWpFjjI9YfiF6mYqMs8rACnZvFQ==
+"unico-webframe@^3.6.4":
+  "integrity" "sha512-SVMcRK443yUVURAib3AafXhzprXNFMwhDAPPeQnXL/5ODsQpDclnUOeqHPczT2JsapEtuJo6kknBCXa/MwcSnw=="
+  "resolved" "https://registry.npmjs.org/unico-webframe/-/unico-webframe-3.6.4.tgz"
+  "version" "3.6.4"
   dependencies:
-    "@fingerprintjs/fingerprintjs-pro" "^3.9.8"
-    crypto-es "^2.1.0"
-    devtools-detector "^2.0.14"
-    face-api.js "^0.22.2"
-    jose-browser-runtime "^3.20.2"
-    platform "^1.3.6"
-    postcss "^8.4.5"
-    uuid "^9.0.0"
+    "crypto-es" "^1.2.7"
+    "devtools-detector" "^2.0.14"
+    "face-api.js" "^0.22.2"
+    "jose-browser-runtime" "^3.20.2"
+    "otpauth" "^9.0.2"
+    "platform" "^1.3.6"
+    "postcss" "^8.4.5"
+    "uuid" "^9.0.0"
 
 uuid@^9.0.0:
   version "9.0.0"
