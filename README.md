@@ -20,8 +20,12 @@
 
 O componente de captura do SDK Web está utilizando as seguintes versões:
 
-- **Next:** ^15.3.1;
-- **React:** ^19.1.0;
+- **Next:** 14.3.0;
+- **React:** 18.2.0;
+
+O componente de captura do SDK Web é compatível com as seguintes versões mínimas do Next:
+
+- **Next:** a partir da versão 1.0 em diante foi projetado para usar ECMAScript 6 (ES6) — também conhecido como ECMAScript 2015 — no qual a SDK Unico utiliza como base. Qualquer versão de framework que tenha como base o ES6 vai funcionar com a SDK Unico.
 
 ### 📱 Dispositivos Compatíveis
 
