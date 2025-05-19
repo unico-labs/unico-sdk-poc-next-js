@@ -54,7 +54,7 @@ export default function VerificationLayout() {
         {showCamera ? (
           <CameraCapture onClose={() => setShowCamera(false)} />
         ) : (
-          <div className="w-full py-8 md:py-12">
+          <div className="w-full pt-0 pb-60">
             <div className="mx-auto text-center mb-8 md:mb-12 max-w-[800px] px-4">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
                 POC SDK Unico Next.js
