@@ -88,7 +88,13 @@ if current_version != site_version:
         # Ela garante que a branch local está atualizada com a branch remota.
         # Se a branch remota já existir, o pull --rebase irá pegar as últimas mudanças
         # e aplicar o seu commit por cima delas, evitando o erro de "push rejected".
-        subprocess.run(["git", "pull", "--rebase", "origin", branch_name], check=True)
+        try:
+            # Try to pull from the remote in case the branch exists
+            subprocess.run(["git", "pull", "--rebase", "origin", branch_name], check=True)
+        except subprocess.CalledProcessError as e:
+            # If pull fails, it means the branch is new, so we continue without pulling.
+            print(f"Branch does not exist on remote. Proceeding with initial push.")
+            
         subprocess.run(["git", "push", "origin", branch_name], check=True)
 
         # Cria a tag para o release
