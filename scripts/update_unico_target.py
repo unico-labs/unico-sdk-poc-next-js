@@ -12,6 +12,16 @@ URL_RELEASE_NOTES = "https://devcenter.unico.io/idcloud/integracao/sdk/integraca
 DEPENDENCY_NAME = "unico-webframe"
 REPO_PATH = "."  # Diretório do repositório local
 
+# Função para dar pull caso já exista algum repositório criado.
+def doPullRequest(branch_name): 
+    try:
+        print("EXECUTANDO O COMANDO PULL --REBASE ORIGIN !")
+        subprocess.run(["git", "pull", "--rebase", "origin", branch_name], check=True)
+    except subprocess.CalledProcessError as e:
+            # If pull fails, it means the branch is new, so we continue without pulling.
+            print(f"Branch does not exist on remote. Proceeding with initial push.")
+
+
 # ===============================
 # 1️⃣ Capturar a versão e a data da página
 # ===============================
@@ -116,11 +126,3 @@ if current_version != site_version:
 
 else:
     print("🔄 Versão já está na mais recente. Nenhuma ação necessária.")
-
-def doPullRequest(branch_name): 
-    try:
-        print("EXECUTANDO O COMANDO PULL --REBASE ORIGIN !")
-        subprocess.run(["git", "pull", "--rebase", "origin", branch_name], check=True)
-    except subprocess.CalledProcessError as e:
-            # If pull fails, it means the branch is new, so we continue without pulling.
-            print(f"Branch does not exist on remote. Proceeding with initial push.")
